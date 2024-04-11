@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Survey</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row justify-content-center pt-5 pb-5">
+      <div class="content-body col-lg-6 col-md-12 pb-5">
+        <div class="title row justify-content-center pt-5 pb-3">
+          <div class="col">
+            <h4 id="title">Survey about emotional perception <br> and communication effectiveness</h4>
+          </div>
+        </div>
+        <hr>
+        <form action="/form-process" method="POST">
+          <fieldset>
+            <!-- info -->
+            <div class="row justify-content-center">
+              <div class="col pt-3">
+                <h5>How old are you?</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" value="&lt;20" />
+                  <label class="form-check-label">&lt; 20</label>
+                </div>
+                <div class="form-check pt-2">
+                  <input class="form-check-input" type="radio" name="age" value="20-29" />
+                  <label class="form-check-label">20 - 29</label>
+                </div>
+                <div class="form-check pt-2">
+                  <input class="form-check-input" type="radio" name="age" value="30-39" />
+                  <label class="form-check-label">30 - 39</label>
+                </div>
+                <div class="form-check pt-2">
+                  <input class="form-check-input" type="radio" name="age" value="&gt;39" />
+                  <label class="form-check-label">&gt; 39</label>
+                </div>
+              </div>
+              <p style="color: rgb(173, 1, 1);"><i><strong>** Please read the messages carefully then answer the questions.</strong></i></p>
+            </div>
+
+            <div id="formQuestions"></div>
+            
+            <div class="row justify-content-center pt-4">
+              <input id="submit-btn" type="submit" role="button">
+            </div>
+
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
