@@ -130,6 +130,23 @@ exports.submit = async (req, res) => {
     }
 };
 
+exports.getAllData = async (req, res) => {
+
+    
+    mongoDBServerConnect().catch(console.dir);
+    const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION);
+    collection.find().toArray().then(result => {
+        res.status(200);
+        res.send(result);
+        console.log("Retrieve data successfully");
+        res.end();
+        return;
+    }).catch(err => {
+        res.status(400);
+        console.error("Something went wrong: ", err);
+    });
+};
+
 exports.getData = async (req, res) => {
     mongoDBServerConnect().catch(console.dir);
     const { condition, age} = req.query;

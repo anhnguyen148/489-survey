@@ -31,6 +31,8 @@ app.get('/viet', (req, res) => {
     res.end();
 });
 
+app.get('/allData', formProcess.getAllData);
+
 app.get('/data', formProcess.getData);
 
 app.post('/form-process', formProcess.submit);
