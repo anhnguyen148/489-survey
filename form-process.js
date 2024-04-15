@@ -132,12 +132,15 @@ exports.submit = async (req, res) => {
 
 exports.getAllData = async (req, res) => {
 
-    
     mongoDBServerConnect().catch(console.dir);
     const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION);
     collection.find().toArray().then(result => {
         res.status(200);
-        res.send(result);
+        res.render("all-data", {
+            name: "All Data",
+            data: result,
+            answers: result.answers
+        });
         console.log("Retrieve data successfully");
         res.end();
         return;
