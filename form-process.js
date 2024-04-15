@@ -138,8 +138,7 @@ exports.getAllData = async (req, res) => {
         res.status(200);
         res.render("all-data", {
             name: "All Data",
-            data: result,
-            answers: result.answers
+            data: result
         });
         console.log("Retrieve data successfully");
         res.end();
