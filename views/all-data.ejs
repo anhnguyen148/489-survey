@@ -21,37 +21,45 @@
     <div class="row justify-content-center pt-5 pb-5">
       <div class="col">
         <h1 style="text-align: center;">Data</h1>
-        <table class="table" id="myTable">
+        <table class="table">
           <thead>
             <tr>
-              <th scope="col">Age</th>
-              <th scope="col">Message</th>
-              <th scope="col">Condition</th>
-              <th scope="col">Intense</th>
-              <th scope="col">Clear</th>
-              <th scope="col">Annoying</th>
+              <th scope="col"></th>
+              <th scope="col" colspan="3" style="text-align: center;">Condition 1</th>
+              <th scope="col" colspan="3" style="text-align: center;">Condition 2</th>
+              <th scope="col" colspan="3" style="text-align: center;">Condition 3</th>
+              <th scope="col" colspan="3" style="text-align: center;">Condition 4</th>
+            </tr>
+            <tr>
+              <th scope="col" style="text-align: center;">Participant</th>
+              <th scope="col" style="text-align: center;">Age</th>
+              <th scope="col" style="text-align: center;">Intense</th>
+              <th scope="col" style="text-align: center;">Clear</th>
+              <th scope="col" style="text-align: center;">Annoying</th>
+              <th scope="col" style="text-align: center;">Intense</th>
+              <th scope="col" style="text-align: center;">Clear</th>
+              <th scope="col" style="text-align: center;">Annoying</th>
+              <th scope="col" style="text-align: center;">Intense</th>
+              <th scope="col" style="text-align: center;">Clear</th>
+              <th scope="col" style="text-align: center;">Annoying</th>
+              <th scope="col" style="text-align: center;">Intense</th>
+              <th scope="col" style="text-align: center;">Clear</th>
+              <th scope="col" style="text-align: center;">Annoying</th>
             </tr>
           </thead>
           <tbody>
-            <% data.forEach(el => { %>
+            <% for (var i = 0; i < data.length; i++) { %>
               <tr>
-                <td><%= el.age %></td>
-                <% for (var i = 0; i < el.answers; i++) { %>
-                  <td><%= el.answers[i].message %></td>
-                  <td><%= el.answers[i].condition %></td>
-                  <td class="rates"><%=
-                    el.answers[i].intense %></td>
-                  <td class="rates"><%=
-                    el.answers[i].clear %></td>
-                  <td class="rates"><%=
-                    el.answers[i].annoying %></td>
-                  <!-- <td><%= el.condition %></td>
-                  <td class="rates"><%= el.intense %></td>
-                  <td class="rates"><%= el.clear %></td>
-                  <td class="rates"><%= el.annoying %></td> -->
+                <td style="text-align: center;"><%= (i+1) %></td>
+                <td style="text-align: center;"><%= data[i]['age'] %></td>
+                
+                <% for (var j = 0; j < data[i]['answers'].length; j++) { %>
+                  <td style="text-align: center;"><%= data[i]['answers'][j]['groupOfAnswer']['intense'][0] %> <%= data[i]['answers'][j]['groupOfAnswer']['intense'][1] %> <%= data[i]['answers'][j]['groupOfAnswer']['intense'][2] %></td>
+                  <td style="text-align: center;"><%= data[i]['answers'][j]['groupOfAnswer']['clear'][0] %> <%= data[i]['answers'][j]['groupOfAnswer']['clear'][1] %> <%= data[i]['answers'][j]['groupOfAnswer']['clear'][2] %></td>
+                  <td style="text-align: center;"><%= data[i]['answers'][j]['groupOfAnswer']['annoying'][0] %> <%= data[i]['answers'][j]['groupOfAnswer']['annoying'][1] %> <%= data[i]['answers'][j]['groupOfAnswer']['annoying'][2] %></td>
                 <% } %>
               </tr>
-            <% })%>
+            <% }%>
           </tbody>
         </table>
       </div>
